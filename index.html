@@ -41,7 +41,6 @@
       overflow: hidden;
       pointer-events: none;
     }
-
     .ocean-gradient {
       position: absolute;
       inset: 0;
@@ -50,7 +49,6 @@
         radial-gradient(ellipse 60% 40% at 80% 100%, rgba(91,200,232,0.2) 0%, transparent 60%),
         linear-gradient(170deg, #040d18 0%, #0a2540 35%, #0e4d6e 70%, #0a2540 100%);
     }
-
     .wave-layer {
       position: absolute;
       bottom: 0; left: 0;
@@ -58,19 +56,14 @@
       height: 280px;
       opacity: 0.12;
     }
-
     .wave-layer svg { width: 100%; height: 100%; }
-
     .wave-layer.w1 { animation: waveMove 14s ease-in-out infinite alternate; bottom: 0; }
     .wave-layer.w2 { animation: waveMove 18s ease-in-out infinite alternate-reverse; bottom: 30px; opacity: 0.08; }
     .wave-layer.w3 { animation: waveMove 22s ease-in-out infinite alternate; bottom: 60px; opacity: 0.06; }
-
     @keyframes waveMove {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-
-    /* Floating particles */
     .particles { position: absolute; inset: 0; }
     .particle {
       position: absolute;
@@ -85,8 +78,6 @@
       90%  { opacity: 0.4; }
       100% { transform: translateY(-100px) scale(1); opacity: 0; }
     }
-
-    /* Light shimmer lines */
     .shimmer-line {
       position: absolute;
       width: 1px;
@@ -121,9 +112,9 @@
       color: var(--sea-foam);
     }
     .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a {
-      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
       text-transform: uppercase; color: rgba(168,230,240,0.7);
       text-decoration: none; transition: color 0.3s;
     }
@@ -138,7 +129,6 @@
       text-align: center;
       position: relative;
     }
-
     .hero-eyebrow {
       font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem; font-weight: 500;
@@ -147,8 +137,6 @@
       opacity: 0;
       animation: fadeSlideUp 0.9s ease 0.3s forwards;
     }
-
-    /* Profile image */
     .profile-ring {
       position: relative; margin: 28px auto 32px;
       width: 200px; height: 200px;
@@ -173,32 +161,15 @@
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
-    .profile-img {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(91,200,232,0.4);
-      box-shadow:
-        0 0 40px rgba(26,127,168,0.5),
-        0 0 80px rgba(26,127,168,0.2),
-        inset 0 0 20px rgba(91,200,232,0.1);
-      /* Using a placeholder avatar for demo */
-      background: linear-gradient(135deg, #0e4d6e 0%, #1a7fa8 50%, #0a2540 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
-    }
-    /* SVG avatar placeholder */
     .profile-img-wrap {
       width: 100%; height: 100%;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid rgba(91,200,232,0.4);
-      box-shadow:
-        0 0 40px rgba(26,127,168,0.5),
-        0 0 80px rgba(26,127,168,0.2);
+      box-shadow: 0 0 40px rgba(26,127,168,0.5), 0 0 80px rgba(26,127,168,0.2);
       background: linear-gradient(145deg, #0e4d6e, #0a2540);
     }
-    .profile-img-wrap svg { width: 100%; height: 100%; }
+    .profile-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
     .hero-name {
       font-family: 'Playfair Display', serif;
@@ -210,7 +181,6 @@
       opacity: 0; animation: fadeSlideUp 0.9s ease 0.7s forwards;
     }
     .hero-name span { color: var(--gold); }
-
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -219,14 +189,12 @@
       margin-top: 10px;
       opacity: 0; animation: fadeSlideUp 0.9s ease 0.9s forwards;
     }
-
     .hero-divider {
       width: 80px; height: 2px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
       margin: 28px auto;
       opacity: 0; animation: fadeSlideUp 0.9s ease 1.1s forwards;
     }
-
     .bio-card {
       max-width: 720px;
       background: rgba(255,255,255,0.04);
@@ -244,7 +212,6 @@
       font-weight: 300;
     }
     .bio-card p + p { margin-top: 16px; }
-
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -256,7 +223,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .section-label {
       font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.28em; text-transform: uppercase;
@@ -316,9 +282,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .linkedin-icon svg { width: 28px; height: 28px; fill: #fff; }
-    .linkedin-stats {
-      display: flex; gap: 40px; margin: 24px 0;
-    }
+    .linkedin-stats { display: flex; gap: 40px; margin: 24px 0; }
     .stat { text-align: center; }
     .stat-number {
       font-family: 'Playfair Display', serif;
@@ -345,50 +309,17 @@
       text-decoration: none; cursor: pointer; border: none;
       transition: all 0.3s ease;
     }
-    .btn-linkedin {
-      background: #0077B5; color: #fff;
-      box-shadow: 0 4px 20px rgba(0,119,181,0.4);
-    }
-    .btn-linkedin:hover {
-      background: #005f91;
-      box-shadow: 0 8px 30px rgba(0,119,181,0.6);
-      transform: translateY(-2px);
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--sea-bright), var(--sea-mid));
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(26,127,168,0.4);
-    }
-    .btn-primary:hover {
-      box-shadow: 0 8px 30px rgba(26,127,168,0.6);
-      transform: translateY(-2px);
-    }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), #a07830);
-      color: var(--sea-deep);
-      box-shadow: 0 4px 20px rgba(201,168,76,0.3);
-    }
-    .btn-gold:hover {
-      box-shadow: 0 8px 30px rgba(201,168,76,0.5);
-      transform: translateY(-2px);
-    }
-    .btn-ghost {
-      background: transparent;
-      border: 1.5px solid rgba(91,200,232,0.4);
-      color: var(--sea-foam);
-    }
-    .btn-ghost:hover {
-      background: rgba(91,200,232,0.1);
-      border-color: var(--sea-foam);
-      transform: translateY(-2px);
-    }
+    .btn-linkedin { background: #0077B5; color: #fff; box-shadow: 0 4px 20px rgba(0,119,181,0.4); }
+    .btn-linkedin:hover { background: #005f91; box-shadow: 0 8px 30px rgba(0,119,181,0.6); transform: translateY(-2px); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
+    .btn-whatsapp:hover { box-shadow: 0 8px 30px rgba(37,211,102,0.55); transform: translateY(-2px); }
+    .btn-email { background: linear-gradient(135deg, #ea4335, #c62828); color: #fff; box-shadow: 0 4px 20px rgba(234,67,53,0.35); }
+    .btn-email:hover { box-shadow: 0 8px 30px rgba(234,67,53,0.55); transform: translateY(-2px); }
+    .btn-phone { background: linear-gradient(135deg, var(--sea-bright), #006d96); color: #fff; box-shadow: 0 4px 20px rgba(26,127,168,0.35); }
+    .btn-phone:hover { box-shadow: 0 8px 30px rgba(26,127,168,0.55); transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; }
 
-    /* ─── CARDS GRID ─── */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 28px;
-    }
+    /* ─── CARD BASE ─── */
     .card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(91,200,232,0.12);
@@ -409,7 +340,6 @@
       object-fit: cover;
       background: linear-gradient(135deg, var(--sea-mid), var(--sea-deep));
       display: flex; align-items: center; justify-content: center;
-      font-size: 3rem;
       overflow: hidden;
       position: relative;
     }
@@ -419,20 +349,12 @@
       transition: transform 0.5s ease;
     }
     .card:hover .card-img img { transform: scale(1.07); }
-    .card-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 8px;
-    }
-    .card-img-placeholder svg { width: 48px; height: 48px; opacity: 0.5; }
-
     .card-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(10,37,64,0.85) 0%, transparent 60%);
       opacity: 0; transition: opacity 0.3s;
     }
     .card:hover .card-overlay { opacity: 1; }
-
     .card-badge {
       position: absolute; top: 14px; left: 14px;
       background: rgba(201,168,76,0.9); color: var(--sea-deep);
@@ -468,6 +390,45 @@
     .card:hover .card-link { color: var(--sea-foam); gap: 10px; }
     .card-link svg { width: 14px; height: 14px; }
 
+    /* ─── CAROUSEL ─── */
+    .carousel-wrap { position: relative; }
+    .carousel-track-outer { overflow: hidden; }
+    .carousel-track {
+      display: flex; gap: 28px;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+      will-change: transform;
+    }
+    .carousel-track .card {
+      flex: 0 0 300px; min-width: 300px;
+    }
+    .carousel-controls {
+      display: flex; align-items: center;
+      justify-content: center; gap: 16px; margin-top: 32px;
+    }
+    .carousel-btn {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1.5px solid rgba(91,200,232,0.35);
+      background: rgba(255,255,255,0.05);
+      color: var(--sea-foam); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease; backdrop-filter: blur(8px);
+    }
+    .carousel-btn:hover {
+      background: rgba(91,200,232,0.15);
+      border-color: var(--sea-foam); transform: scale(1.1);
+    }
+    .carousel-btn:disabled { opacity: 0.25; cursor: not-allowed; transform: none; }
+    .carousel-btn svg { width: 20px; height: 20px; }
+    .carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(91,200,232,0.25);
+      cursor: pointer; transition: all 0.3s ease; border: none;
+    }
+    .carousel-dot.active {
+      background: var(--sea-light); width: 24px; border-radius: 4px;
+    }
+
     /* ─── DIVIDER ─── */
     .full-divider {
       position: relative; padding: 0 5%; max-width: none;
@@ -479,42 +440,8 @@
     }
 
     /* ─── CONTACT SECTION ─── */
-    .contact-section {
-      text-align: center; padding-bottom: 120px;
-    }
-    .contact-buttons {
-      display: flex; flex-wrap: wrap;
-      gap: 16px; justify-content: center; margin-top: 48px;
-    }
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-    }
-    .btn-whatsapp:hover {
-      box-shadow: 0 8px 30px rgba(37,211,102,0.55);
-      transform: translateY(-2px);
-    }
-    .btn-email {
-      background: linear-gradient(135deg, #ea4335, #c62828);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(234,67,53,0.35);
-    }
-    .btn-email:hover {
-      box-shadow: 0 8px 30px rgba(234,67,53,0.55);
-      transform: translateY(-2px);
-    }
-    .btn-phone {
-      background: linear-gradient(135deg, var(--sea-bright), #006d96);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(26,127,168,0.35);
-    }
-    .btn-phone:hover {
-      box-shadow: 0 8px 30px rgba(26,127,168,0.55);
-      transform: translateY(-2px);
-    }
-    .btn svg { width: 18px; height: 18px; }
-
+    .contact-section { text-align: center; padding-bottom: 120px; }
+    .contact-buttons { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 48px; }
     .contact-card {
       max-width: 680px; margin: 0 auto;
       background: rgba(255,255,255,0.03);
@@ -523,11 +450,7 @@
       padding: 52px 48px;
       backdrop-filter: blur(12px);
     }
-    .contact-card p {
-      font-size: 1rem; line-height: 1.75;
-      color: rgba(240,250,253,0.7);
-      margin-bottom: 8px;
-    }
+    .contact-card p { font-size: 1rem; line-height: 1.75; color: rgba(240,250,253,0.7); margin-bottom: 8px; }
     .contact-info { display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
     .contact-row {
       display: flex; align-items: center; gap: 14px;
@@ -549,10 +472,7 @@
       letter-spacing: 0.12em; color: rgba(240,250,253,0.4);
       margin-bottom: 2px;
     }
-    .contact-row-value {
-      font-size: 0.95rem; color: var(--sea-foam);
-      font-weight: 500;
-    }
+    .contact-row-value { font-size: 0.95rem; color: var(--sea-foam); font-weight: 500; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -567,55 +487,9 @@
     footer span { color: var(--gold); }
 
     /* ─── SCROLL REVEAL ─── */
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ─── CAROUSEL ─── */
-.carousel-wrap { position: relative; }
-.carousel-track-outer { overflow: hidden; }
-.carousel-track {
-  display: flex; gap: 28px;
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-  will-change: transform;
-}
-.carousel-track .card {
-  flex: 0 0 300px; min-width: 300px;
-}
-.carousel-controls {
-  display: flex; align-items: center;
-  justify-content: center; gap: 16px; margin-top: 32px;
-}
-.carousel-btn {
-  width: 48px; height: 48px; border-radius: 50%;
-  border: 1.5px solid rgba(91,200,232,0.35);
-  background: rgba(255,255,255,0.05);
-  color: var(--sea-foam); cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s ease; backdrop-filter: blur(8px);
-}
-.carousel-btn:hover {
-  background: rgba(91,200,232,0.15);
-  border-color: var(--sea-foam); transform: scale(1.1);
-}
-.carousel-btn:disabled { opacity: 0.25; cursor: not-allowed; transform: none; }
-.carousel-btn svg { width: 20px; height: 20px; }
-.carousel-dots { display: flex; gap: 8px; align-items: center; }
-.carousel-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(91,200,232,0.25);
-  cursor: pointer; transition: all 0.3s ease; border: none;
-}
-.carousel-dot.active {
-  background: var(--sea-light); width: 24px; border-radius: 4px;
-}
-    
     /* ─── RESPONSIVE ─── */
     @media(max-width: 768px) {
       .linkedin-card { grid-template-columns: 1fr; }
@@ -625,6 +499,7 @@
       .linkedin-stats { gap: 24px; }
       .contact-card { padding: 36px 24px; }
       section { padding: 60px 5%; }
+      .carousel-track .card { flex: 0 0 260px; min-width: 260px; }
     }
   </style>
 </head>
@@ -633,18 +508,12 @@
 <!-- ═══ ANIMATED OCEAN BACKGROUND ═══ -->
 <div class="ocean-bg">
   <div class="ocean-gradient"></div>
-
-  <!-- Shimmer vertical lines -->
   <div class="shimmer-line" style="left:10%; --delay:0s;"></div>
   <div class="shimmer-line" style="left:30%; --delay:1.5s;"></div>
   <div class="shimmer-line" style="left:55%; --delay:3s;"></div>
   <div class="shimmer-line" style="left:75%; --delay:2s;"></div>
   <div class="shimmer-line" style="left:90%; --delay:4.5s;"></div>
-
-  <!-- Floating particles -->
   <div class="particles" id="particles"></div>
-
-  <!-- Wave layers -->
   <div class="wave-layer w1">
     <svg viewBox="0 0 1440 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path fill="rgba(91,200,232,1)" d="M0,140 C180,200 360,80 540,140 C720,200 900,80 1080,140 C1260,200 1400,100 1440,120 L1440,280 L0,280 Z"/>
@@ -670,6 +539,10 @@
     <li><a href="#linkedin">LinkedIn</a></li>
     <li><a href="#accomplishments">Publications</a></li>
     <li><a href="#companies">Companies</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#consulting">Consulting</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#grants">Grants</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -681,46 +554,9 @@
   <section class="hero" id="about" style="max-width:100%;">
     <p class="hero-eyebrow">Founder, Academic, &amp; Edtech Entrepreneur</p>
 
-    <!-- Profile Image -->
     <div class="profile-ring">
       <div class="profile-img-wrap">
-        <!-- SVG Placeholder Avatar – replace src with actual photo -->
         <img src="profile.jpg" alt="Enoch Opare Mintah" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-          <defs>
-            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0e4d6e"/>
-              <stop offset="100%" stop-color="#0a2540"/>
-            </linearGradient>
-            <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#c8a47e"/>
-              <stop offset="100%" stop-color="#a07850"/>
-            </linearGradient>
-          </defs>
-          <rect width="200" height="200" fill="url(#bg)"/>
-          <!-- Body / suit -->
-          <ellipse cx="100" cy="190" rx="65" ry="50" fill="#0a3a5c"/>
-          <rect x="72" y="130" width="56" height="70" rx="8" fill="#0a3a5c"/>
-          <!-- Shirt & tie -->
-          <rect x="85" y="130" width="30" height="60" fill="#f0fafd"/>
-          <polygon points="100,138 95,145 100,175 105,145" fill="#c9a84c"/>
-          <!-- Head -->
-          <ellipse cx="100" cy="102" rx="38" ry="44" fill="url(#skin)"/>
-          <!-- Hair -->
-          <ellipse cx="100" cy="68" rx="38" ry="18" fill="#1a0f05"/>
-          <rect x="62" y="68" width="76" height="20" fill="#1a0f05"/>
-          <!-- Eyes -->
-          <ellipse cx="86" cy="100" rx="5" ry="5.5" fill="#fff"/>
-          <ellipse cx="114" cy="100" rx="5" ry="5.5" fill="#fff"/>
-          <circle cx="87" cy="101" r="3" fill="#1a0f05"/>
-          <circle cx="115" cy="101" r="3" fill="#1a0f05"/>
-          <!-- Nose -->
-          <path d="M100 108 Q97 115 100 117 Q103 115 100 108" fill="rgba(0,0,0,0.18)"/>
-          <!-- Smile -->
-          <path d="M90 122 Q100 130 110 122" stroke="#8a5a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <!-- Ears -->
-          <ellipse cx="62" cy="102" rx="6" ry="9" fill="url(#skin)"/>
-          <ellipse cx="138" cy="102" rx="6" ry="9" fill="url(#skin)"/>
-        </svg>
       </div>
     </div>
 
@@ -728,16 +564,11 @@
     <p class="hero-title">Visionary Leader · Author · Global Innovator</p>
     <div class="hero-divider"></div>
 
-    <!-- Bio -->
     <div class="bio-card">
       <p><strong style="color:var(--sea-foam)">Dr Enoch Opare Mintah (PhD, FHEA, CMBE, MRes, MBA, MSc, BA)</strong> is a global higher and professional education consultant and Edtech entrepreneur. He holds faculty and visiting lecturer positions in the UK, China, India and some African countries, teaching sustainability-related courses to support green skills development and just transition.</p>
-
       <p>He has founded educational and media platforms, including <em style="color:var(--gold-light)">Study Sustainability Hub (SSH), Sustainability News Africa (SNA), Sustainability Skills and Careers Launchpad Africa (SSCLA) and Leaps and Heights Foundation.</em></p>
-
       <p>He is the Sustainability Lead for Leaps and Heights Services Limited, UK, a consulting company that delivers ESG training and advisory services for listed companies and MSMEs on the African continent.</p>
-
-      <p>
-        Enoch is a published author and is committed to bridging the global green expertise gap through skills capacity development, innovation and policy engagement.</p>
+      <p>Enoch is a published author and is committed to bridging the global green expertise gap through skills capacity development, innovation and policy engagement.</p>
     </div>
   </section>
 
@@ -759,44 +590,29 @@
             </svg>
           </div>
         </div>
-
         <div class="linkedin-stats">
-          <div class="stat">
-            <div class="stat-number">3K+</div>
-            <div class="stat-label">Followers</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Connections</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Articles</div>
-          </div>
+          <div class="stat"><div class="stat-number">3K+</div><div class="stat-label">Followers</div></div>
+          <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Connections</div></div>
+          <div class="stat"><div class="stat-number">10+</div><div class="stat-label">Articles</div></div>
         </div>
-
         <p class="linkedin-description">
-          Dr. Enoch Opare Mintah (PGG) Building @SSCL Africa @Study Sustainability Hub @Sustainability News Africa || Governance || Sustainability || ESG || Climate Change || Green Skills, Jobs & Careers || Global Education || Agenda 2063
+          Dr. Enoch Opare Mintah (PGG) Building @SSCL Africa @Study Sustainability Hub @Sustainability News Africa || Governance || Sustainability || ESG || Climate Change || Green Skills, Jobs &amp; Careers || Global Education || Agenda 2063
         </p>
         <p class="linkedin-description">
           <em style="color:var(--sea-foam)">Phd, FHEA, CMBE, MRes, MBA, MSc, BA</em>
         </p>
-
         <a href="https://www.linkedin.com/in/enochoparemintah/" target="_blank" class="btn btn-linkedin">
           <svg viewBox="0 0 24 24" fill="white" style="width:18px;height:18px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           View LinkedIn Profile
         </a>
       </div>
-
-      <!-- Right column decorative quote -->
       <div style="text-align:center; min-width:200px;">
         <div style="font-family:'Playfair Display',serif; font-size:7rem; line-height:0.8; color:rgba(91,200,232,0.12); user-select:none;">"</div>
         <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem; line-height:1.6; color:rgba(240,250,253,0.65); margin-top:-20px;">
-          Curiosity! Curiosity!! Curiosity!!! So I end up knowing nothing about everything and everything about nothing. But just take chances and give me one shot just one shot is all I ask for. 
+          Curiosity! Curiosity!! Curiosity!!! So I end up knowing nothing about everything and everything about nothing. But just take chances and give me one shot just one shot is all I ask for.
         </p>
-
-        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem; line-height:3.6; color:rgba(240,250,253,0.65); margin-top:-20px;">Thank you.</p>
-        <p style="font-size:0.75rem; color:var(--gold); margin-top:14px; letter-spacing:0.1em; text-transform:uppercase;">— Enoch Opare MIntah (PGG)</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem; line-height:2; color:rgba(240,250,253,0.65);">Thank you.</p>
+        <p style="font-size:0.75rem; color:var(--gold); margin-top:14px; letter-spacing:0.1em; text-transform:uppercase;">— Enoch Opare Mintah (PGG)</p>
       </div>
     </div>
   </section>
@@ -804,131 +620,126 @@
   <!-- divider -->
   <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
-  <!-- ── ACCOMPLISHMENTS / PUBLICATIONS ── -->
+  <!-- ── PUBLICATIONS ── -->
   <section id="accomplishments" class="reveal">
     <p class="section-label">Articles, Books, &amp; Publications</p>
     <h2 class="section-title">Intellectual <em>Accomplishments</em></h2>
     <p class="section-intro">Groundbreaking books and numerous peer-reviewed publications that have redefined thinking across business strategy, sustainability, and human capital.</p>
     <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-publications">
 
-    <div class="cards-grid">
+          <!-- Article 1 -->
+          <a href="https://www.sustainabilitynewsafrica.com/articles/climate-proficiency-an-inevitable-employability-and-future-skill" target="_blank" class="card">
+            <div class="card-img">
+              <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a2540,#0e3d5c);width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:48px;opacity:0.5;">
+                  <rect x="4" y="6" width="40" height="36" rx="3" fill="rgba(91,200,232,0.15)" stroke="rgba(91,200,232,0.4)" stroke-width="1.5"/>
+                  <line x1="10" y1="16" x2="38" y2="16" stroke="rgba(240,250,253,0.4)" stroke-width="2"/>
+                  <line x1="10" y1="22" x2="38" y2="22" stroke="rgba(240,250,253,0.25)" stroke-width="1.5"/>
+                  <line x1="10" y1="28" x2="28" y2="28" stroke="rgba(240,250,253,0.2)" stroke-width="1.5"/>
+                  <line x1="10" y1="34" x2="32" y2="34" stroke="rgba(240,250,253,0.15)" stroke-width="1.5"/>
+                </svg>
+                <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">Climate proficiency</span>
+              </div>
+              <div class="card-overlay"></div>
+              <div class="card-badge">2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Article</div>
+              <h3 class="card-title">An inevitable employability and future skill</h3>
+              <p class="card-desc">The world of work is rapidly evolving. The global hunt for talent has seen a spike in recent years as both local and international companies are actively attracting and retaining the best hearts, minds and hands for their corporate mission and vision.</p>
+              <span class="card-link">Read Article <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Book 1 -->
-      <a href="https://www.sustainabilitynewsafrica.com/articles/climate-proficiency-an-inevitable-employability-and-future-skill" target="_blank" class="card reveal reveal-delay-1">
-        <div class="card-img">
-          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a2540,#0e3d5c);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="6" width="40" height="36" rx="3" fill="rgba(91,200,232,0.15)" stroke="rgba(91,200,232,0.4)" stroke-width="1.5"/>
-              <line x1="10" y1="16" x2="38" y2="16" stroke="rgba(240,250,253,0.4)" stroke-width="2"/>
-              <line x1="10" y1="22" x2="38" y2="22" stroke="rgba(240,250,253,0.25)" stroke-width="1.5"/>
-              <line x1="10" y1="28" x2="28" y2="28" stroke="rgba(240,250,253,0.2)" stroke-width="1.5"/>
-              <line x1="10" y1="34" x2="32" y2="34" stroke="rgba(240,250,253,0.15)" stroke-width="1.5"/>
-            </svg>
-            <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">Climate proficiency</span>
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-badge">2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Article</div>
-          <h3 class="card-title">An inevitable employability and future skill</h3>
-          <p class="card-desc">The world of work is rapidly evolving. The global hunt for talent has seen a spike in recent years as both local and international companies are actively attracting and retaining the best hearts, minds and hands for their corporate mission and vision. </p>
-          <span class="card-link">
-            Read Article
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Article 2 -->
+          <a href="https://www.sustainabilitynewsafrica.com/articles/ghanas-cocoa-traceability-system-delivers-bankable-returns-for-farmers" target="_blank" class="card">
+            <div class="card-img">
+              <div class="card-img-placeholder" style="background:linear-gradient(135deg,#102040,#0e4d2e);width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:48px;opacity:0.5;">
+                  <rect x="6" y="4" width="28" height="38" rx="3" fill="rgba(91,232,130,0.2)" stroke="rgba(91,232,130,0.5)" stroke-width="1.5"/>
+                  <rect x="10" y="4" width="28" height="38" rx="3" fill="rgba(91,200,232,0.15)" stroke="rgba(91,200,232,0.4)" stroke-width="1.5"/>
+                  <circle cx="24" cy="22" r="8" stroke="rgba(240,250,253,0.3)" stroke-width="1.5"/>
+                  <path d="M24 14 L24 30 M16 22 L32 22" stroke="rgba(240,250,253,0.25)" stroke-width="1.5"/>
+                </svg>
+                <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">Ghana's cocoa</span>
+              </div>
+              <div class="card-overlay"></div>
+              <div class="card-badge">2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Article</div>
+              <h3 class="card-title">Ghana's cocoa traceability system delivers bankable returns for farmers</h3>
+              <p class="card-desc">Whether it is about the nativity claim of Cocao to the North Americans, or the bragging rights as the largest producers and exporters of Cocoa to the West Africans, the tempting licking mind game of tasting chocolates knows no bounds.</p>
+              <span class="card-link">Read More <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Book 2 -->
-      <a href="https://www.sustainabilitynewsafrica.com/articles/ghanas-cocoa-traceability-system-delivers-bankable-returns-for-farmers" target="_blank" class="card reveal reveal-delay-2">
-        <div class="card-img">
-          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#102040,#0e4d2e);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="4" width="28" height="38" rx="3" fill="rgba(91,232,130,0.2)" stroke="rgba(91,232,130,0.5)" stroke-width="1.5"/>
-              <rect x="10" y="4" width="28" height="38" rx="3" fill="rgba(91,200,232,0.15)" stroke="rgba(91,200,232,0.4)" stroke-width="1.5"/>
-              <circle cx="24" cy="22" r="8" stroke="rgba(240,250,253,0.3)" stroke-width="1.5"/>
-              <path d="M24 14 L24 30 M16 22 L32 22" stroke="rgba(240,250,253,0.25)" stroke-width="1.5"/>
-            </svg>
-            <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">Ghana's cocoa</span>
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-badge">2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Article</div>
-          <h3 class="card-title">Ghana's cocoa traceability system delivers bankable returns for farmers</h3>
-          <p class="card-desc">Whether it is about the nativity claim of Cocao to the North Americans, or the bragging rights as the largest producers and exporters of Cocoa to the West Africans, the tempting licking mind game of tasting chocolates knows no bounds, not the young or old, even for the haves and have-nots.</p>
-          <span class="card-link">
-            Read More
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Article 3 -->
+          <a href="https://www.sustainabilitynewsafrica.com/articles/motivating-boardroom-esg-decisions-esg-ratings-vs-climate-migration" target="_blank" class="card">
+            <div class="card-img">
+              <div class="card-img-placeholder" style="background:linear-gradient(135deg,#2a1040,#0a2540);width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:48px;height:48px;opacity:0.5;">
+                  <rect x="6" y="4" width="28" height="38" rx="3" fill="rgba(168,130,232,0.2)" stroke="rgba(168,130,232,0.5)" stroke-width="1.5"/>
+                  <rect x="10" y="4" width="28" height="38" rx="3" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
+                  <path d="M16 14 L32 14 L32 28 L24 34 L16 28 Z" stroke="rgba(240,250,253,0.3)" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">ESG ratings vs. climate migration</span>
+              </div>
+              <div class="card-overlay"></div>
+              <div class="card-badge">2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Article</div>
+              <h3 class="card-title">Motivating boardroom ESG decisions: ESG ratings vs. climate migration</h3>
+              <p class="card-desc">The recent IPCC report has been validated by the recent heatwaves across the UK, parts of Europe and America, not to mention the plethora of current flood and fire disaster references to corroborate the significant impact of climate change.</p>
+              <span class="card-link">Read Article <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Book 3 -->
-      <a href="https://www.sustainabilitynewsafrica.com/articles/motivating-boardroom-esg-decisions-esg-ratings-vs-climate-migration" target="_blank" class="card reveal reveal-delay-3">
-        <div class="card-img">
-          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#2a1040,#0a2540);">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="4" width="28" height="38" rx="3" fill="rgba(168,130,232,0.2)" stroke="rgba(168,130,232,0.5)" stroke-width="1.5"/>
-              <rect x="10" y="4" width="28" height="38" rx="3" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.4)" stroke-width="1.5"/>
-              <path d="M16 14 L32 14 L32 28 L24 34 L16 28 Z" stroke="rgba(240,250,253,0.3)" stroke-width="1.5" fill="none"/>
-            </svg>
-            <span style="font-size:0.7rem;color:rgba(240,250,253,0.4);letter-spacing:0.1em;">ESG ratings vs. climate migration</span>
-          </div>
-          <div class="card-overlay"></div>
-          <div class="card-badge">2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Article</div>
-          <h3 class="card-title">Motivating boardroom ESG decisions: ESG ratings vs. climate migration</h3>
-          <p class="card-desc">The recent IPCC report has been validated by the recent heatwaves across the UK, parts of Europe and America, not to mention the plethora of current flood and fire disaster references to corroborate the significant impact of climate change. Simply put, there is no politicking about the reality or truth of climate change although approaches to mitigating its challenges show otherwise.</p>
-          <span class="card-link">
-            Read Article
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Book 1 -->
+          <a href="https://share.google/DdZVWTJBnO20YkPDS" target="_blank" class="card">
+            <div class="card-img">
+              <img src="casebook.jpg" alt="Sustainability Management and Strategy" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Publication</div>
+              <h3 class="card-title">Sustainability Management and Strategy</h3>
+              <p class="card-desc">With Africa predicted to emerge as a leading market in the coming years, the debate on sustainability, especially on the mitigation of business impact on the continent's environment and society, cannot be underestimated.</p>
+              <span class="card-link">PreOrder <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Publication 2 -->
-      <a href="https://share.google/DdZVWTJBnO20YkPDS" target="_blank" class="card reveal reveal-delay-2">
-        <div class="card-img">
-          <img src="casebook.jpg" alt="Mercer Ventures Group" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Publication</div>
-          <h3 class="card-title">Sustainability Management and Strategy</h3>
-          <p class="card-desc">With Africa predicted to emerge as a leading market in the coming years, the debate on sustainability, especially on the mitigation of business impact on the continent’s environment and society, cannot be underestimated.</p>
-          <span class="card-link">
-            PreOrder
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Book 2 -->
+          <a href="https://study-public-bucket.s3.eu-north-1.amazonaws.com/advertise/pdfs/Study_Sustainability_Hub_SusTerm_Dictionary.pdf" target="_blank" class="card">
+            <div class="card-img">
+              <img src="dictionary.jpg" alt="SusTerm Dictionary" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Publication</div>
+              <h3 class="card-title">SusTerm Dictionary</h3>
+              <p class="card-desc">This Sustainability Dictionary was born out of a single, powerful idea: sustainability can and should be explained in simple terms and understood by everyone, not just specialists.</p>
+              <span class="card-link">Download PDF <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Publication 3 -->
-      <a href="https://study-public-bucket.s3.eu-north-1.amazonaws.com/advertise/pdfs/Study_Sustainability_Hub_SusTerm_Dictionary.pdf" target="_blank" class="card reveal reveal-delay-3">
-        <div class="card-img">
-          <img src="dictionary.jpg" alt="Mercer Ventures Group" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">2025</div>
         </div>
-        <div class="card-body">
-          <div class="card-type">Publication</div>
-          <h3 class="card-title">SusTerm Dictionary</h3>
-          <p class="card-desc">This Sustainability Dictionary was born out of a single, powerful idea: sustainability
-can and should be explained in simple terms and understood by everyone, not just
-specialists.</p>
-          <span class="card-link">
-            Download PDF
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
-
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-publications', -1)" id="prev-publications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-publications"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-publications', 1)" id="next-publications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -941,107 +752,116 @@ specialists.</p>
     <h2 class="section-title">Founded <em>Companies</em></h2>
     <p class="section-intro">Five category-defining companies built from scratch — each solving a distinct global challenge at the intersection of technology, sustainability, and human potential.</p>
     <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-companies">
 
-    <div class="cards-grid">
+          <!-- Company 1 -->
+          <a href="https://www.leapsandheightsfoundation.org" target="_blank" class="card">
+            <div class="card-img">
+              <img src="company1.jpg" alt="Leaps and Heights Foundation" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Founded 2024</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Non-Profit / Impact</div>
+              <h3 class="card-title">Leaps and Heights Foundation</h3>
+              <p class="card-desc">Develop communities where young people are empowered to act sustainably, live sustainably, and lead sustainably.</p>
+              <span class="card-link">Visit Website <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Company 1 -->
-      <a href="https://www.leapsandheightsfoundation.org" target="_blank" class="card reveal reveal-delay-1">
-        <div class="card-img">
-          <img src="company1.jpg" alt="Mercer Ventures Group" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">Founded 2024</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Non-Profit / Impact</div>
-          <h3 class="card-title">Leaps and Heights Foundation</h3>
-          <p class="card-desc">Develop communities where young people are empowered to act sustainably, live sustainably, and lead sustainably.</p>
-          <span class="card-link">
-            Visit Website
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Company 2 -->
+          <a href="https://www.studysustainabilityhub.com" target="_blank" class="card">
+            <div class="card-img">
+              <img src="company2.jpg" alt="Study Sustainability Hub" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Founded 2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Marketplace / Sustainability Education and Careers</div>
+              <h3 class="card-title">Study Sustainability Hub</h3>
+              <p class="card-desc">The world's first and largest one-stop marketplace for sustainability education and careers, where we take students, professionals and life-long learners on a journey to Find a Course, Choose a Career and Be Employable.</p>
+              <span class="card-link">Visit Website <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Company 2 -->
-      <a href="https://www.studysustainabilityhub.com" target="_blank" class="card reveal reveal-delay-2">
-        <div class="card-img">
-          <img src="company2.jpg" alt="Blue Horizon Foundation" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">Founded 2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Marketplace / Sustainability Education and Careers</div>
-          <h3 class="card-title">Study Sustainability Hub</h3>
-          <p class="card-desc">The world's first and largest one-stop marketplace for sustainability education and careers, where we take students, professionals and life-long learners on a journey to Find a Course, Choose a Career and Be Employable through our featured tabs.</p>
-          <span class="card-link">
-            Visit Website
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Company 3 -->
+          <a href="https://www.sustainabilitynewsafrica.com" target="_blank" class="card">
+            <div class="card-img">
+              <img src="company3.jpg" alt="Sustainability News Africa" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Founded 2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Digital Media / data-intelligence</div>
+              <h3 class="card-title">Sustainability News Africa</h3>
+              <p class="card-desc">A platform dedicated to informing, empowering, and accelerating Africa's transition to a climate-resilient, sustainable future.</p>
+              <span class="card-link">Visit Website <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Company 3 -->
-      <a href="https://www.sustainabilitynewsafrica.com" target="_blank" class="card reveal reveal-delay-3">
-        <div class="card-img">
-          <img src="company3.jpg" alt="NexCore AI" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">Founded 2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Digital Media / data-intelligence</div>
-          <h3 class="card-title">Sustainability News Africa</h3>
-          <p class="card-desc">A platform dedicated to informing, empowering, and accelerating Africa’s transition to a climate-resilient, sustainable future.</p>
-          <span class="card-link">
-            Visit Website
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Company 4 -->
+          <a href="https://www.ssclafrica.com" target="_blank" class="card">
+            <div class="card-img">
+              <img src="company4.jpg" alt="SSCLA" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Founded 2025</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Academy</div>
+              <h3 class="card-title">Sustainability Skills and Careers Launchpad Africa</h3>
+              <p class="card-desc">The first decolonised sustainability education platform which offers courses rooted in indigenous knowledge using African examples and case studies, ensuring learning is relevant, relatable, and applicable.</p>
+              <span class="card-link">Visit Website <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Company 4 -->
-      <a href="https://www.ssclafrica.com" target="_blank" class="card reveal reveal-delay-4">
-        <div class="card-img">
-          <img src="company4.jpg" alt="Apex Capital Partners" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">Founded 2025</div>
-        </div>
-        <div class="card-body">
-          <div class="card-type">Academy</div>
-          <h3 class="card-title">Sustainability Skills and Careers launchpad Africa</h3>
-          <p class="card-desc">The first decolonised sustainability education platform which offers courses rooted in indigenous knowledge using African examples and case studies, ensuring learning is relevant, relatable, and applicable.</p>
-          <span class="card-link">
-            Visit Website
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
+          <!-- Company 5 -->
+          <a href="https://www.agenda2063bc.com/" target="_blank" class="card">
+            <div class="card-img">
+              <img src="company5.jpg" alt="Agenda 2063 Business Compact" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Coming Soon</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Agenda 2063</div>
+              <h3 class="card-title">Agenda 2063 Business Compact</h3>
+              <p class="card-desc">Agenda 2063 is the African Union's flagship long-term strategic framework, articulating a shared vision for "The Africa We Want", an Africa that is prosperous, inclusive, integrated, peaceful, and globally influential.</p>
+              <span class="card-link">Visit Website <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
 
-      <!-- Company 5 -->
-      <a href="https://www.agenda2063bc.com/" target="_blank" class="card reveal reveal-delay-4">
-        <div class="card-img">
-          <img src="company5.jpg" alt="Apex Capital Partners" style="width:100%;height:100%;object-fit:cover;">
-          <div class="card-overlay"></div>
-          <div class="card-badge">Coming Soon</div>
         </div>
-        <div class="card-body">
-          <div class="card-type">Agenda 2063</div>
-          <h3 class="card-title">Agenda 2063 Business Compact</h3>
-          <p class="card-desc">Agenda 2063 is the African Union’s flagship long-term strategic framework, articulating a shared vision for “The Africa We Want”, an Africa that is prosperous, inclusive, integrated, peaceful, and globally influential.</p>
-          <span class="card-link">
-            Visit Website
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </div>
-      </a>
-
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-companies', -1)" id="prev-companies">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-companies"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-companies', 1)" id="next-companies">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- divider -->
   <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
-   <!-- AWARD 1 IMAGE — replace "award1.jpg" with your filename -->
-              <img src="award1.jpg" alt="Forbes 50" style="width:100%;height:100%;object-fit:cover;">
+  <!-- ── AWARDS ── -->
+  <section id="awards" class="reveal">
+    <p class="section-label">Recognition &amp; Honours</p>
+    <h2 class="section-title">Awards &amp; <em>Accolades</em></h2>
+    <p class="section-intro">Recognised by the world's most prestigious institutions for outstanding leadership, innovation, and global impact.</p>
+    <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-awards">
+
+          <!-- Award 1 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <img src="award1.jpg" alt="Award 1" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2023</div>
             </div>
@@ -1052,12 +872,11 @@ specialists.</p>
               <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Award 2 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- AWARD 2 IMAGE — replace "award2.jpg" with your filename -->
-              <img src="award2.jpg" alt="WEF Young Global Leader" style="width:100%;height:100%;object-fit:cover;">
+              <img src="award2.jpg" alt="Award 2" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2021</div>
             </div>
@@ -1068,12 +887,11 @@ specialists.</p>
               <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Award 3 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- AWARD 3 IMAGE — replace "award3.jpg" with your filename -->
-              <img src="award3.jpg" alt="FT McKinsey Award" style="width:100%;height:100%;object-fit:cover;">
+              <img src="award3.jpg" alt="Award 3" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2019</div>
             </div>
@@ -1084,12 +902,11 @@ specialists.</p>
               <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Award 4 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- AWARD 4 IMAGE — replace "award4.jpg" with your filename -->
-              <img src="award4.jpg" alt="UN SDG Pioneer" style="width:100%;height:100%;object-fit:cover;">
+              <img src="award4.jpg" alt="Award 4" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2022</div>
             </div>
@@ -1100,12 +917,11 @@ specialists.</p>
               <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Award 5 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- AWARD 5 IMAGE — replace "award5.jpg" with your filename -->
-              <img src="award5.jpg" alt="Harvard Alumni Award" style="width:100%;height:100%;object-fit:cover;">
+              <img src="award5.jpg" alt="Award 5" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2020</div>
             </div>
@@ -1116,7 +932,7 @@ specialists.</p>
               <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
         </div>
       </div>
       <div class="carousel-controls">
@@ -1131,20 +947,22 @@ specialists.</p>
     </div>
   </section>
 
+  <!-- divider -->
+  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
+
   <!-- ── CONSULTING ── -->
   <section id="consulting" class="reveal">
     <p class="section-label">Advisory &amp; Expertise</p>
     <h2 class="section-title">Consulting <em>Services</em></h2>
-    <p class="section-intro">Jonathan offers exclusive strategic consulting to a select group of organisations annually — bringing decades of boardroom experience to your most complex challenges.</p>
+    <p class="section-intro">Dr. Enoch offers exclusive strategic consulting to a select group of organisations annually — bringing decades of boardroom experience to your most complex challenges.</p>
     <div class="section-hr"></div>
     <div class="carousel-wrap">
       <div class="carousel-track-outer">
         <div class="carousel-track" id="track-consulting">
- 
+
           <!-- Consulting 1 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- CONSULTING 1 IMAGE — replace "consulting1.jpg" with your filename -->
               <img src="consulting1.jpg" alt="Strategic Advisory" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">Advisory</div>
@@ -1156,11 +974,10 @@ specialists.</p>
               <span class="card-link">Enquire Now <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Consulting 2 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- CONSULTING 2 IMAGE — replace "consulting2.jpg" with your filename -->
               <img src="consulting2.jpg" alt="Impact Consulting" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">Impact</div>
@@ -1172,7 +989,7 @@ specialists.</p>
               <span class="card-link">Enquire Now <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
         </div>
       </div>
       <div class="carousel-controls">
@@ -1186,10 +1003,10 @@ specialists.</p>
       </div>
     </div>
   </section>
- 
+
   <!-- divider -->
   <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
- 
+
   <!-- ── SPEAKER ENGAGEMENTS ── -->
   <section id="speaking" class="reveal">
     <p class="section-label">Keynotes &amp; Panels</p>
@@ -1199,12 +1016,11 @@ specialists.</p>
     <div class="carousel-wrap">
       <div class="carousel-track-outer">
         <div class="carousel-track" id="track-speaking">
- 
+
           <!-- Speaking 1 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- SPEAKING 1 IMAGE — replace "speaking1.jpg" with your filename -->
-              <img src="speaking1.jpg" alt="Davos WEF" style="width:100%;height:100%;object-fit:cover;">
+              <img src="speaking1.jpg" alt="Speaking 1" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2024</div>
             </div>
@@ -1215,12 +1031,11 @@ specialists.</p>
               <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Speaking 2 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- SPEAKING 2 IMAGE — replace "speaking2.jpg" with your filename -->
-              <img src="speaking2.jpg" alt="TED Talk" style="width:100%;height:100%;object-fit:cover;">
+              <img src="speaking2.jpg" alt="Speaking 2" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2022</div>
             </div>
@@ -1231,12 +1046,11 @@ specialists.</p>
               <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Speaking 3 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- SPEAKING 3 IMAGE — replace "speaking3.jpg" with your filename -->
-              <img src="speaking3.jpg" alt="African Union Summit" style="width:100%;height:100%;object-fit:cover;">
+              <img src="speaking3.jpg" alt="Speaking 3" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2023</div>
             </div>
@@ -1247,12 +1061,11 @@ specialists.</p>
               <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Speaking 4 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- SPEAKING 4 IMAGE — replace "speaking4.jpg" with your filename -->
-              <img src="speaking4.jpg" alt="Harvard Business School" style="width:100%;height:100%;object-fit:cover;">
+              <img src="speaking4.jpg" alt="Speaking 4" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2023</div>
             </div>
@@ -1263,12 +1076,11 @@ specialists.</p>
               <span class="card-link">Learn More <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
           <!-- Speaking 5 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- SPEAKING 5 IMAGE — replace "speaking5.jpg" with your filename -->
-              <img src="speaking5.jpg" alt="COP Climate Conference" style="width:100%;height:100%;object-fit:cover;">
+              <img src="speaking5.jpg" alt="Speaking 5" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">2023</div>
             </div>
@@ -1279,7 +1091,7 @@ specialists.</p>
               <span class="card-link">Watch Panel <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
         </div>
       </div>
       <div class="carousel-controls">
@@ -1293,24 +1105,23 @@ specialists.</p>
       </div>
     </div>
   </section>
- 
+
   <!-- divider -->
   <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
- 
+
   <!-- ── GRANT ASSESSOR ── -->
   <section id="grants" class="reveal">
     <p class="section-label">Grant &amp; Funding Review</p>
     <h2 class="section-title">Grant <em>Assessor</em></h2>
-    <p class="section-intro">Jonathan serves as an independent grant assessor and funding committee member for leading philanthropic foundations and government innovation programmes worldwide.</p>
+    <p class="section-intro">Dr. Enoch serves as an independent grant assessor and funding committee member for leading philanthropic foundations and government innovation programmes worldwide.</p>
     <div class="section-hr"></div>
     <div class="carousel-wrap">
       <div class="carousel-track-outer">
         <div class="carousel-track" id="track-grants">
- 
+
           <!-- Grant 1 -->
           <a href="#" target="_blank" class="card">
             <div class="card-img">
-              <!-- GRANT 1 IMAGE — replace "grant1.jpg" with your filename -->
               <img src="grant1.jpg" alt="Grant Assessor" style="width:100%;height:100%;object-fit:cover;">
               <div class="card-overlay"></div>
               <div class="card-badge">Active</div>
@@ -1322,7 +1133,7 @@ specialists.</p>
               <span class="card-link">Learn More <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
             </div>
           </a>
- 
+
         </div>
       </div>
       <div class="carousel-controls">
@@ -1335,10 +1146,10 @@ specialists.</p>
         </button>
       </div>
     </div>
-  </section>          
- 
+  </section>
+
   <!-- divider -->
-  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>         
+  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
   <!-- ── CONTACT ── -->
   <section id="contact" class="contact-section reveal">
@@ -1348,8 +1159,8 @@ specialists.</p>
 
     <div class="contact-card">
       <p>Connect directly through any of the channels below. Response time is typically within 48 business hours.</p>
-
       <div class="contact-info">
+
         <div class="contact-row">
           <div class="contact-row-icon" style="background:rgba(37,211,102,0.15);">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1387,10 +1198,10 @@ specialists.</p>
             <div class="contact-row-value">+233 545 722 224</div>
           </div>
         </div>
-      </div>
 
+      </div>
       <div class="contact-buttons">
-        <a href="https://wa.me/0545722224" target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/233545722224" target="_blank" class="btn btn-whatsapp">
           <svg viewBox="0 0 24 24" fill="white" style="width:18px;height:18px;">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.08-1.35C8.5 21.52 10.21 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" stroke="white" stroke-width="1" fill="none"/>
@@ -1418,7 +1229,7 @@ specialists.</p>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <p>© 2026 <span>Dr. Enoch Opare Mintah</span>. All rights reserved. &nbsp;|&nbsp; Built with intentionality.(EOM's Private Office)</p>
+  <p>© 2026 <span>Dr. Enoch Opare Mintah</span>. All rights reserved. &nbsp;|&nbsp; Built with intentionality. (EOM's Private Office)</p>
 </footer>
 
 <script>
@@ -1459,11 +1270,7 @@ specialists.</p>
   (function () {
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        nav.style.background = 'rgba(4,13,24,0.92)';
-      } else {
-        nav.style.background = 'rgba(4,13,24,0.7)';
-      }
+      nav.style.background = window.scrollY > 60 ? 'rgba(4,13,24,0.92)' : 'rgba(4,13,24,0.7)';
     });
   })();
 
@@ -1471,95 +1278,78 @@ specialists.</p>
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
-      const cx = r.width / 2;
-      const cy = r.height / 2;
-      const rx = ((y - cy) / cy) * 4;
-      const ry = ((x - cx) / cx) * -4;
+      const rx = (((e.clientY - r.top) / r.height) - 0.5) * 8;
+      const ry = (((e.clientX - r.left) / r.width) - 0.5) * -8;
       card.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 
-/* ── CAROUSEL ENGINE ── */
-const carousels = {};
+  /* ── CAROUSEL ENGINE ── */
+  const carousels = {};
 
-function initCarousel(trackId) {
-  const track = document.getElementById(trackId);
-  if (!track) return;
-  const cards = track.querySelectorAll('.card');
-  const cardWidth = 300 + 28; // card width + gap
-  const visibleCount = Math.floor(track.parentElement.offsetWidth / cardWidth) || 1;
-  const totalCards = cards.length;
-  const maxIndex = Math.max(0, totalCards - visibleCount);
+  function initCarousel(trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const cards = track.querySelectorAll('.card');
+    const cardWidth = 300 + 28;
+    const visibleCount = Math.max(1, Math.floor(track.parentElement.offsetWidth / cardWidth));
+    const totalCards = cards.length;
+    const maxIndex = Math.max(0, totalCards - visibleCount);
+    carousels[trackId] = { index: 0, maxIndex, cardWidth, totalCards, visibleCount };
 
-  carousels[trackId] = { index: 0, maxIndex, cardWidth, totalCards, visibleCount };
-
-  // Build dots
-  const dotsId = trackId.replace('track-', 'dots-');
-  const dotsContainer = document.getElementById(dotsId);
-  if (dotsContainer) {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i <= maxIndex; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => goToSlide(trackId, i));
-      dotsContainer.appendChild(dot);
+    const dotsId = trackId.replace('track-', 'dots-');
+    const dotsContainer = document.getElementById(dotsId);
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(trackId, i));
+        dotsContainer.appendChild(dot);
+      }
     }
+    updateCarouselButtons(trackId);
   }
-  updateCarouselButtons(trackId);
-}
 
-function goToSlide(trackId, index) {
-  const c = carousels[trackId];
-  if (!c) return;
-  c.index = Math.max(0, Math.min(index, c.maxIndex));
-  const track = document.getElementById(trackId);
-  track.style.transform = `translateX(-${c.index * c.cardWidth}px)`;
+  function goToSlide(trackId, index) {
+    const c = carousels[trackId];
+    if (!c) return;
+    c.index = Math.max(0, Math.min(index, c.maxIndex));
+    const track = document.getElementById(trackId);
+    track.style.transform = `translateX(-${c.index * c.cardWidth}px)`;
+    const dotsId = trackId.replace('track-', 'dots-');
+    document.querySelectorAll(`#${dotsId} .carousel-dot`).forEach((d, i) => {
+      d.classList.toggle('active', i === c.index);
+    });
+    updateCarouselButtons(trackId);
+  }
 
-  // Update dots
-  const dotsId = trackId.replace('track-', 'dots-');
-  const dots = document.querySelectorAll(`#${dotsId} .carousel-dot`);
-  dots.forEach((d, i) => d.classList.toggle('active', i === c.index));
+  function slideCarousel(trackId, direction) {
+    const c = carousels[trackId];
+    if (!c) return;
+    goToSlide(trackId, c.index + direction);
+  }
 
-  updateCarouselButtons(trackId);
-}
+  function updateCarouselButtons(trackId) {
+    const c = carousels[trackId];
+    if (!c) return;
+    const name = trackId.replace('track-', '');
+    const prevBtn = document.getElementById(`prev-${name}`);
+    const nextBtn = document.getElementById(`next-${name}`);
+    if (prevBtn) prevBtn.disabled = c.index === 0;
+    if (nextBtn) nextBtn.disabled = c.index >= c.maxIndex;
+  }
 
-function slideCarousel(trackId, direction) {
-  const c = carousels[trackId];
-  if (!c) return;
-  goToSlide(trackId, c.index + direction);
-}
+  const allTracks = [
+    'track-publications', 'track-companies', 'track-awards',
+    'track-consulting', 'track-speaking', 'track-grants'
+  ];
 
-function updateCarouselButtons(trackId) {
-  const c = carousels[trackId];
-  if (!c) return;
-  const name = trackId.replace('track-', '');
-  const prevBtn = document.getElementById(`prev-${name}`);
-  const nextBtn = document.getElementById(`next-${name}`);
-  if (prevBtn) prevBtn.disabled = c.index === 0;
-  if (nextBtn) nextBtn.disabled = c.index >= c.maxIndex;
-}
-
-// Init all carousels on load
-window.addEventListener('load', () => {
-  ['track-publications', 'track-companies', 'track-awards',
-   'track-consulting', 'track-speaking', 'track-grants'].forEach(initCarousel);
-});
-
-// Re-init on resize
-window.addEventListener('resize', () => {
-  ['track-publications', 'track-companies', 'track-awards',
-   'track-consulting', 'track-speaking', 'track-grants'].forEach(id => {
-    goToSlide(id, 0);
-    initCarousel(id);
+  window.addEventListener('load', () => { allTracks.forEach(initCarousel); });
+  window.addEventListener('resize', () => {
+    allTracks.forEach(id => { goToSlide(id, 0); initCarousel(id); });
   });
-});
-```
-  
 </script>
 </body>
 </html>
