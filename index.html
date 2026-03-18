@@ -577,6 +577,45 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
+/* ─── CAROUSEL ─── */
+.carousel-wrap { position: relative; }
+.carousel-track-outer { overflow: hidden; }
+.carousel-track {
+  display: flex; gap: 28px;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+.carousel-track .card {
+  flex: 0 0 300px; min-width: 300px;
+}
+.carousel-controls {
+  display: flex; align-items: center;
+  justify-content: center; gap: 16px; margin-top: 32px;
+}
+.carousel-btn {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1.5px solid rgba(91,200,232,0.35);
+  background: rgba(255,255,255,0.05);
+  color: var(--sea-foam); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease; backdrop-filter: blur(8px);
+}
+.carousel-btn:hover {
+  background: rgba(91,200,232,0.15);
+  border-color: var(--sea-foam); transform: scale(1.1);
+}
+.carousel-btn:disabled { opacity: 0.25; cursor: not-allowed; transform: none; }
+.carousel-btn svg { width: 20px; height: 20px; }
+.carousel-dots { display: flex; gap: 8px; align-items: center; }
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(91,200,232,0.25);
+  cursor: pointer; transition: all 0.3s ease; border: none;
+}
+.carousel-dot.active {
+  background: var(--sea-light); width: 24px; border-radius: 4px;
+}
+    
     /* ─── RESPONSIVE ─── */
     @media(max-width: 768px) {
       .linkedin-card { grid-template-columns: 1fr; }
@@ -723,7 +762,7 @@
 
         <div class="linkedin-stats">
           <div class="stat">
-            <div class="stat-number">18K+</div>
+            <div class="stat-number">3K+</div>
             <div class="stat-label">Followers</div>
           </div>
           <div class="stat">
@@ -1001,6 +1040,306 @@ specialists.</p>
   <!-- divider -->
   <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
+   <!-- AWARD 1 IMAGE — replace "award1.jpg" with your filename -->
+              <img src="award1.jpg" alt="Forbes 50" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2023</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Global Recognition</div>
+              <h3 class="card-title">Forbes 50 Most Influential Business Leaders</h3>
+              <p class="card-desc">Named among Forbes' annual list of the world's 50 most influential business leaders for transformative impact in sustainable enterprise.</p>
+              <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Award 2 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- AWARD 2 IMAGE — replace "award2.jpg" with your filename -->
+              <img src="award2.jpg" alt="WEF Young Global Leader" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2021</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">World Economic Forum</div>
+              <h3 class="card-title">WEF Young Global Leader Award</h3>
+              <p class="card-desc">Honoured by the World Economic Forum as a Young Global Leader for pioneering cross-sector collaboration between business, government, and civil society.</p>
+              <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Award 3 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- AWARD 3 IMAGE — replace "award3.jpg" with your filename -->
+              <img src="award3.jpg" alt="FT McKinsey Award" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2019</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Literary Award</div>
+              <h3 class="card-title">FT / McKinsey Business Book of the Year</h3>
+              <p class="card-desc">Winner of the most prestigious business book award globally for "The Regenerative CEO" — selected from over 300 submissions by an independent judging panel.</p>
+              <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Award 4 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- AWARD 4 IMAGE — replace "award4.jpg" with your filename -->
+              <img src="award4.jpg" alt="UN SDG Pioneer" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2022</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">United Nations</div>
+              <h3 class="card-title">UN SDG Pioneer — Ocean &amp; Climate Action</h3>
+              <p class="card-desc">Designated a UN Sustainable Development Goals Pioneer for exceptional contributions to SDG 14 (Life Below Water) and SDG 13 (Climate Action).</p>
+              <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Award 5 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- AWARD 5 IMAGE — replace "award5.jpg" with your filename -->
+              <img src="award5.jpg" alt="Harvard Alumni Award" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2020</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Academic Honours</div>
+              <h3 class="card-title">Harvard Alumni Achievement Award</h3>
+              <p class="card-desc">Presented by Harvard University to distinguished alumni who have demonstrated extraordinary leadership and made significant contributions to society at a global scale.</p>
+              <span class="card-link">View Award <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-awards', -1)" id="prev-awards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-awards"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-awards', 1)" id="next-awards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONSULTING ── -->
+  <section id="consulting" class="reveal">
+    <p class="section-label">Advisory &amp; Expertise</p>
+    <h2 class="section-title">Consulting <em>Services</em></h2>
+    <p class="section-intro">Jonathan offers exclusive strategic consulting to a select group of organisations annually — bringing decades of boardroom experience to your most complex challenges.</p>
+    <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-consulting">
+ 
+          <!-- Consulting 1 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- CONSULTING 1 IMAGE — replace "consulting1.jpg" with your filename -->
+              <img src="consulting1.jpg" alt="Strategic Advisory" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Advisory</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Corporate Strategy</div>
+              <h3 class="card-title">Executive &amp; Board Strategic Advisory</h3>
+              <p class="card-desc">Retained advisory engagements for CEOs, Boards, and C-suite executives navigating transformation, expansion into new markets, or high-stakes capital events such as IPOs and mergers.</p>
+              <span class="card-link">Enquire Now <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Consulting 2 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- CONSULTING 2 IMAGE — replace "consulting2.jpg" with your filename -->
+              <img src="consulting2.jpg" alt="Impact Consulting" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Impact</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Impact &amp; Sustainability</div>
+              <h3 class="card-title">Impact Investing &amp; ESG Strategy</h3>
+              <p class="card-desc">Guiding institutional investors, family offices, and development finance institutions to build robust ESG frameworks and deploy capital into high-impact, commercially viable opportunities.</p>
+              <span class="card-link">Enquire Now <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-consulting', -1)" id="prev-consulting">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-consulting"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-consulting', 1)" id="next-consulting">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- divider -->
+  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
+ 
+  <!-- ── SPEAKER ENGAGEMENTS ── -->
+  <section id="speaking" class="reveal">
+    <p class="section-label">Keynotes &amp; Panels</p>
+    <h2 class="section-title">Speaker <em>Engagements</em></h2>
+    <p class="section-intro">A sought-after keynote speaker and panel moderator at the world's most influential forums — from Davos to TED to the African Union Summit.</p>
+    <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-speaking">
+ 
+          <!-- Speaking 1 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- SPEAKING 1 IMAGE — replace "speaking1.jpg" with your filename -->
+              <img src="speaking1.jpg" alt="Davos WEF" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2024</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Keynote</div>
+              <h3 class="card-title">World Economic Forum — Davos Annual Meeting</h3>
+              <p class="card-desc">Delivered the opening keynote on "The Blue Economy at Scale" to an audience of 2,000+ global leaders, heads of state, and senior executives at the Davos Annual Meeting.</p>
+              <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Speaking 2 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- SPEAKING 2 IMAGE — replace "speaking2.jpg" with your filename -->
+              <img src="speaking2.jpg" alt="TED Talk" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2022</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">TED Talk</div>
+              <h3 class="card-title">TED Global — "Why the Ocean Is the Next Frontier of Business"</h3>
+              <p class="card-desc">A viral TED Talk with over 4.2 million views exploring how ocean-inspired thinking can transform the way businesses approach strategy, resilience, and long-term value creation.</p>
+              <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Speaking 3 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- SPEAKING 3 IMAGE — replace "speaking3.jpg" with your filename -->
+              <img src="speaking3.jpg" alt="African Union Summit" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2023</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Summit Address</div>
+              <h3 class="card-title">African Union Business Summit — Addis Ababa</h3>
+              <p class="card-desc">Featured speaker on "Unlocking Africa's Blue Economy" at the African Union Business Summit, presenting a 10-year roadmap for coastal nation economic transformation.</p>
+              <span class="card-link">Watch Talk <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Speaking 4 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- SPEAKING 4 IMAGE — replace "speaking4.jpg" with your filename -->
+              <img src="speaking4.jpg" alt="Harvard Business School" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2023</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Guest Lecture</div>
+              <h3 class="card-title">Harvard Business School — Leadership &amp; Disruption Series</h3>
+              <p class="card-desc">Annual guest lecturer in HBS's flagship Leadership &amp; Disruption programme, engaging MBA students on regenerative business models and stakeholder capitalism.</p>
+              <span class="card-link">Learn More <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+          <!-- Speaking 5 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- SPEAKING 5 IMAGE — replace "speaking5.jpg" with your filename -->
+              <img src="speaking5.jpg" alt="COP Climate Conference" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">2023</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Panel Moderator</div>
+              <h3 class="card-title">COP28 — Private Sector Climate Finance Panel</h3>
+              <p class="card-desc">Moderated the high-level Private Sector Climate Finance panel at COP28 in Dubai, convening finance ministers, central bank governors, and leading institutional investors.</p>
+              <span class="card-link">Watch Panel <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-speaking', -1)" id="prev-speaking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-speaking"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-speaking', 1)" id="next-speaking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- divider -->
+  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
+ 
+  <!-- ── GRANT ASSESSOR ── -->
+  <section id="grants" class="reveal">
+    <p class="section-label">Grant &amp; Funding Review</p>
+    <h2 class="section-title">Grant <em>Assessor</em></h2>
+    <p class="section-intro">Jonathan serves as an independent grant assessor and funding committee member for leading philanthropic foundations and government innovation programmes worldwide.</p>
+    <div class="section-hr"></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="track-grants">
+ 
+          <!-- Grant 1 -->
+          <a href="#" target="_blank" class="card">
+            <div class="card-img">
+              <!-- GRANT 1 IMAGE — replace "grant1.jpg" with your filename -->
+              <img src="grant1.jpg" alt="Grant Assessor" style="width:100%;height:100%;object-fit:cover;">
+              <div class="card-overlay"></div>
+              <div class="card-badge">Active</div>
+            </div>
+            <div class="card-body">
+              <div class="card-type">Independent Assessor</div>
+              <h3 class="card-title">Global Ocean &amp; Climate Innovation Grant Programme</h3>
+              <p class="card-desc">Serves as Lead Independent Assessor for a $120M multi-donor grant programme funding early-stage ocean economy and climate tech ventures across the Global South. Evaluates commercial viability, impact potential, and founder capability for applicant organisations.</p>
+              <span class="card-link">Learn More <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+            </div>
+          </a>
+ 
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="slideCarousel('track-grants', -1)" id="prev-grants">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="dots-grants"></div>
+        <button class="carousel-btn" onclick="slideCarousel('track-grants', 1)" id="next-grants">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>          
+ 
+  <!-- divider -->
+  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>         
+
   <!-- ── CONTACT ── -->
   <section id="contact" class="contact-section reveal">
     <p class="section-label">Get In Touch</p>
@@ -1144,6 +1483,83 @@ specialists.</p>
       card.style.transform = '';
     });
   });
+
+/* ── CAROUSEL ENGINE ── */
+const carousels = {};
+
+function initCarousel(trackId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+  const cards = track.querySelectorAll('.card');
+  const cardWidth = 300 + 28; // card width + gap
+  const visibleCount = Math.floor(track.parentElement.offsetWidth / cardWidth) || 1;
+  const totalCards = cards.length;
+  const maxIndex = Math.max(0, totalCards - visibleCount);
+
+  carousels[trackId] = { index: 0, maxIndex, cardWidth, totalCards, visibleCount };
+
+  // Build dots
+  const dotsId = trackId.replace('track-', 'dots-');
+  const dotsContainer = document.getElementById(dotsId);
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(trackId, i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  updateCarouselButtons(trackId);
+}
+
+function goToSlide(trackId, index) {
+  const c = carousels[trackId];
+  if (!c) return;
+  c.index = Math.max(0, Math.min(index, c.maxIndex));
+  const track = document.getElementById(trackId);
+  track.style.transform = `translateX(-${c.index * c.cardWidth}px)`;
+
+  // Update dots
+  const dotsId = trackId.replace('track-', 'dots-');
+  const dots = document.querySelectorAll(`#${dotsId} .carousel-dot`);
+  dots.forEach((d, i) => d.classList.toggle('active', i === c.index));
+
+  updateCarouselButtons(trackId);
+}
+
+function slideCarousel(trackId, direction) {
+  const c = carousels[trackId];
+  if (!c) return;
+  goToSlide(trackId, c.index + direction);
+}
+
+function updateCarouselButtons(trackId) {
+  const c = carousels[trackId];
+  if (!c) return;
+  const name = trackId.replace('track-', '');
+  const prevBtn = document.getElementById(`prev-${name}`);
+  const nextBtn = document.getElementById(`next-${name}`);
+  if (prevBtn) prevBtn.disabled = c.index === 0;
+  if (nextBtn) nextBtn.disabled = c.index >= c.maxIndex;
+}
+
+// Init all carousels on load
+window.addEventListener('load', () => {
+  ['track-publications', 'track-companies', 'track-awards',
+   'track-consulting', 'track-speaking', 'track-grants'].forEach(initCarousel);
+});
+
+// Re-init on resize
+window.addEventListener('resize', () => {
+  ['track-publications', 'track-companies', 'track-awards',
+   'track-consulting', 'track-speaking', 'track-grants'].forEach(id => {
+    goToSlide(id, 0);
+    initCarousel(id);
+  });
+});
+```
+  
 </script>
 </body>
 </html>
