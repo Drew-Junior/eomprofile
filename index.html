@@ -1595,12 +1595,6 @@
     </button>
   </div>
 
-  <!-- Enquire buttons below -->
-  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:40px;">
-    <a href="#contact" class="btn btn-primary">Enquire Now</a>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2GMu2bAGo8VaoZPn60nu1jMGsKk7Hj0PL-oO2JN3BP1blnh4sxZfVWaL88DeEcLVnW1hXV4tq0?gv=true" target="_blank" class="btn btn-gold">Book Appointment</a>
-  </div>
-
 </section>
 
   <!-- divider -->
@@ -2040,6 +2034,83 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     allTracks.forEach(id => { goToSlide(id, 0); initCarousel(id); });
   });
+
+  /* ── Services Carousel ── */
+let servicesIndex = 0;
+const servicePillWidth = 260 + 20;
+
+function getServicesVisible() {
+  const outer = document.getElementById('servicesOuter');
+  if (!outer) return 1;
+  return Math.max(1, Math.floor(outer.offsetWidth / servicePillWidth));
+}
+
+function scrollServices(direction) {
+  const track = document.getElementById('servicesTrack');
+  if (!track) return;
+  const pills = track.querySelectorAll('.service-pill');
+  const visible = getServicesVisible();
+  const maxIndex = Math.max(0, pills.length - visible);
+  servicesIndex = Math.max(0, Math.min(servicesIndex + direction, maxIndex));
+  track.style.transform = `translateX(-${servicesIndex * servicePillWidth}px)`;
+  updateServicesButtons(maxIndex);
+}
+
+function updateServicesButtons(maxIndex) {
+  const leftBtn = document.getElementById('servicesLeft');
+  const rightBtn = document.getElementById('servicesRight');
+  if (leftBtn) leftBtn.disabled = servicesIndex === 0;
+  if (rightBtn) rightBtn.disabled = servicesIndex >= maxIndex;
+}
+
+function startServicesAutoplay() {
+  return setInterval(() => {
+    const track = document.getElementById('servicesTrack');
+    if (!track) return;
+    const pills = track.querySelectorAll('.service-pill');
+    const visible = getServicesVisible();
+    const maxIndex = Math.max(0, pills.length - visible);
+    servicesIndex = servicesIndex >= maxIndex ? 0 : servicesIndex + 1;
+    track.style.transform = `translateX(-${servicesIndex * servicePillWidth}px)`;
+    updateServicesButtons(maxIndex);
+  }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('servicesTrack');
+  const leftBtn = document.getElementById('servicesLeft');
+  const rightBtn = document.getElementById('servicesRight');
+
+  if (!track || !leftBtn || !rightBtn) return;
+
+  // Init button states
+  const pills = track.querySelectorAll('.service-pill');
+  const visible = getServicesVisible();
+  const maxIndex = Math.max(0, pills.length - visible);
+  updateServicesButtons(maxIndex);
+
+  // Start autoplay
+  let autoplay = startServicesAutoplay();
+
+  // Pause on manual arrow click
+  leftBtn.addEventListener('click', () => {
+    clearInterval(autoplay);
+    autoplay = startServicesAutoplay();
+  });
+  rightBtn.addEventListener('click', () => {
+    clearInterval(autoplay);
+    autoplay = startServicesAutoplay();
+  });
+
+  // Reset on resize
+  window.addEventListener('resize', () => {
+    servicesIndex = 0;
+    track.style.transform = 'translateX(0)';
+    const newVisible = getServicesVisible();
+    const newMax = Math.max(0, pills.length - newVisible);
+    updateServicesButtons(newMax);
+  });
+});
 </script>
 </body>
 </html>
