@@ -851,16 +851,21 @@
   .service-pill { flex: 0 0 220px; min-width: 220px; }
 }
 
-    .alumni-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
+/* ─── ALUMNI CAROUSEL ─── */
+.alumni-track-outer { overflow: hidden; }
+.alumni-track {
+  display: flex;
+  gap: 28px;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
 }
 .alumni-card {
+  flex: 0 0 300px;
+  min-width: 300px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(91,200,232,0.15);
   border-radius: 20px;
-  padding: 36px 28px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -884,9 +889,7 @@
   transform: translateY(-6px);
   box-shadow: 0 24px 60px rgba(10,37,64,0.6);
 }
-.alumni-card:hover::after {
-  transform: scaleX(1);
-}
+.alumni-card:hover::after { transform: scaleX(1); }
 .alumni-card-top {
   display: flex;
   align-items: center;
@@ -897,61 +900,45 @@
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  font-size: 1.6rem;
 }
 .alumni-country {
   font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--sea-light);
-  margin-bottom: 4px;
+  color: var(--sea-light); margin-bottom: 4px;
 }
 .alumni-name {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-weight: 700;
-  color: var(--white);
-  line-height: 1.3;
+  font-size: 1rem; font-weight: 700;
+  color: var(--white); line-height: 1.3;
 }
 .alumni-divider {
   width: 40px; height: 1.5px;
   background: linear-gradient(to right, var(--gold), transparent);
 }
-.alumni-details {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.alumni-details { display: flex; flex-direction: column; gap: 10px; }
 .alumni-detail-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-  color: rgba(240,250,253,0.6);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.85rem; color: rgba(240,250,253,0.6);
 }
 .alumni-detail-row svg {
   width: 14px; height: 14px;
-  color: var(--sea-light);
-  flex-shrink: 0;
+  color: var(--sea-light); flex-shrink: 0;
 }
 .alumni-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 4px;
-  padding: 6px 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 4px; padding: 6px 14px;
   background: rgba(91,200,232,0.08);
   border: 1px solid rgba(91,200,232,0.2);
   border-radius: 20px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--sea-foam);
-  width: fit-content;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sea-foam); width: fit-content;
 }
-.alumni-badge svg {
-  width: 12px; height: 12px;
+.alumni-badge svg { width: 12px; height: 12px; }
+@media(max-width: 768px) {
+  .alumni-card { flex: 0 0 260px; min-width: 260px; }
 }
-
+    
     /* ─── RESPONSIVE ─── */
     @media(max-width: 768px) {
       .linkedin-card { grid-template-columns: 1fr; }
@@ -1120,132 +1107,143 @@
    <!-- divider -->
 <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
-<!-- ── ALUMNI CONNECTION ── -->
+  <!-- ── ALUMNI CONNECTION ── -->
 <section id="alumni" class="reveal">
   <p class="section-label">Academic Background</p>
   <h2 class="section-title">Alumni <em>Connections</em></h2>
   <p class="section-intro">Institutions that shaped the academic foundation, professional thinking and global outlook of Dr. Enoch Opare Mintah.</p>
   <div class="section-hr"></div>
 
-  <div class="alumni-grid">
+  <div class="carousel-wrap">
+    <div class="alumni-track-outer">
+      <div class="alumni-track" id="track-alumni">
 
-    <!-- Kingston University London -->
-    <div class="alumni-card">
-      <div class="alumni-card-top">
-        <div class="alumni-icon" style="background:#ffffff; padding:6px;">
-  <img src="images/kingston.jpg" alt="Kingston University London" style="width:100%;height:100%;object-fit:contain;">
-</div>
-        <div>
-          <div class="alumni-country">United Kingdom</div>
-          <div class="alumni-name">Kingston University London</div>
+        <!-- Kingston University London -->
+        <div class="alumni-card">
+          <div class="alumni-card-top">
+            <div class="alumni-icon" style="background:#ffffff; padding:6px;">
+              <img src="images/kingston.jpg" alt="Kingston University London" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div>
+              <div class="alumni-country">United Kingdom</div>
+              <div class="alumni-name">Kingston University London</div>
+            </div>
+          </div>
+          <div class="alumni-divider"></div>
+          <div class="alumni-details">
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Kingston upon Thames, London, UK
+            </div>
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              Faculty of Business and Social Sciences
+            </div>
+          </div>
+          <div class="alumni-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Alumni
+          </div>
         </div>
-      </div>
-      <div class="alumni-divider"></div>
-      <div class="alumni-details">
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          Kingston upon Thames, London, UK
+
+        <!-- University of Liverpool -->
+        <div class="alumni-card">
+          <div class="alumni-card-top">
+            <div class="alumni-icon" style="background:#ffffff; padding:6px;">
+              <img src="images/liverpool.jpg" alt="University of Liverpool" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div>
+              <div class="alumni-country">United Kingdom</div>
+              <div class="alumni-name">University of Liverpool</div>
+            </div>
+          </div>
+          <div class="alumni-divider"></div>
+          <div class="alumni-details">
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Liverpool, Merseyside, UK
+            </div>
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              Russell Group — Founded 1881
+            </div>
+          </div>
+          <div class="alumni-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Alumni
+          </div>
         </div>
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-          Faculty of Business and Social Sciences
+
+        <!-- University of Lincoln -->
+        <div class="alumni-card">
+          <div class="alumni-card-top">
+            <div class="alumni-icon" style="background:#ffffff; padding:6px;">
+              <img src="images/lincoln.png" alt="University of Lincoln" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div>
+              <div class="alumni-country">United Kingdom</div>
+              <div class="alumni-name">University of Lincoln</div>
+            </div>
+          </div>
+          <div class="alumni-divider"></div>
+          <div class="alumni-details">
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Lincoln, Lincolnshire, UK
+            </div>
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              College of Social Science
+            </div>
+          </div>
+          <div class="alumni-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Alumni
+          </div>
         </div>
-      </div>
-      <div class="alumni-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Alumni
+
+        <!-- KNUST -->
+        <div class="alumni-card">
+          <div class="alumni-card-top">
+            <div class="alumni-icon" style="background:#ffffff; padding:6px;">
+              <img src="images/knust.png" alt="KNUST" style="width:100%;height:100%;object-fit:contain;">
+            </div>
+            <div>
+              <div class="alumni-country">Ghana</div>
+              <div class="alumni-name">Kwame Nkrumah University of Science and Technology</div>
+            </div>
+          </div>
+          <div class="alumni-divider"></div>
+          <div class="alumni-details">
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Kumasi, Ashanti Region, Ghana
+            </div>
+            <div class="alumni-detail-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              Premier University of Science &amp; Technology in Ghana
+            </div>
+          </div>
+          <div class="alumni-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Alumni
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- University of Liverpool -->
-    <div class="alumni-card">
-      <div class="alumni-card-top">
-       <div class="alumni-icon" style="background:#ffffff; padding:6px;">
-  <img src="images/liverpool.jpg" alt="University of Liverpool" style="width:100%;height:100%;object-fit:contain;">
-</div>
-        <div>
-          <div class="alumni-country">United Kingdom</div>
-          <div class="alumni-name">University of Liverpool</div>
-        </div>
-      </div>
-      <div class="alumni-divider"></div>
-      <div class="alumni-details">
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          Liverpool, Merseyside, UK
-        </div>
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-          Russell Group — Founded 1881
-        </div>
-      </div>
-      <div class="alumni-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Alumni
-      </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="slideCarousel('track-alumni', -1)" id="prev-alumni">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="carousel-dots" id="dots-alumni"></div>
+      <button class="carousel-btn" onclick="slideCarousel('track-alumni', 1)" id="next-alumni">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
-
-    <!-- University of Lincoln -->
-    <div class="alumni-card">
-      <div class="alumni-card-top">
-        <div class="alumni-icon" style="background:#ffffff; padding:6px;">
-  <img src="images/lincoln.png" alt="University of Lincoln" style="width:100%;height:100%;object-fit:contain;">
-</div>
-        <div>
-          <div class="alumni-country">United Kingdom</div>
-          <div class="alumni-name">University of Lincoln</div>
-        </div>
-      </div>
-      <div class="alumni-divider"></div>
-      <div class="alumni-details">
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          Lincoln, Lincolnshire, UK
-        </div>
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-          College of Social Science
-        </div>
-      </div>
-      <div class="alumni-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Alumni
-      </div>
-    </div>
-
-    <!-- KNUST -->
-    <div class="alumni-card">
-      <div class="alumni-card-top">
-        <div class="alumni-icon" style="background:#ffffff; padding:6px;">
-  <img src="images/knust.png" alt="KNUST" style="width:100%;height:100%;object-fit:contain;">
-</div>
-        <div>
-          <div class="alumni-country">Ghana</div>
-          <div class="alumni-name">Kwame Nkrumah University of Science and Technology</div>
-        </div>
-      </div>
-      <div class="alumni-divider"></div>
-      <div class="alumni-details">
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          Kumasi, Ashanti Region, Ghana
-        </div>
-        <div class="alumni-detail-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-          Premier University of Science &amp; Technology in Ghana
-        </div>
-      </div>
-      <div class="alumni-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Alumni
-      </div>
-    </div>
-
   </div>
 </section>
 
-  <!-- divider -->
-  <div class="full-divider" style="max-width:100%; padding:0 5%;"><hr/></div>
 
   <!-- ── PUBLICATIONS ── -->
   <section id="accomplishments" class="reveal">
@@ -2382,9 +2380,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const allTracks = [
-    'track-publications', 'track-companies', 'track-awards',
-    'track-consulting', 'track-speaking', 'track-grants'
-  ];
+  'track-alumni', 'track-publications', 'track-companies', 'track-awards',
+  'track-consulting', 'track-speaking', 'track-grants'
+];
 
   window.addEventListener('load', () => { allTracks.forEach(initCarousel); });
   window.addEventListener('resize', () => {
